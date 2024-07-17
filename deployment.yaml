@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vite-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vite-app
+  template:
+    metadata:
+      labels:
+        app: vite-app
+    spec:
+      containers:
+        - name: vite-app-container
+          image: semahriahi/project_semahbank-vite-app:latest
+          ports:
+            - containerPort: 8000
+          volumeMounts:
+            - name: app-volume
+              mountPath: /usr/src/app
+            - name: node-modules
+              mountPath: /usr/src/app/node_modules
+      volumes:
+        - name: app-volume
+          hostPath:
+            path: /path/to/your/app  # Update this path with your local path
+        - name: node-modules
+          emptyDir: {}

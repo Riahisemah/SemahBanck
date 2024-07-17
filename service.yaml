@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vite-app-service
+spec:
+  selector:
+    app: vite-app
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 4173
+      nodePort: 3000  # Update this nodePort if needed
+  type: NodePort

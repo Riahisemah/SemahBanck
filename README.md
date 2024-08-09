@@ -49,7 +49,7 @@ Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 1. **Cloner le dépôt :**
 
    ```bash
-   git clone https://github.com/votre-utilisateur/gestion-cartes-paiements.git
+   git clone https://github.com/Riahisemah/SemahBanck/
    cd gestion-cartes-paiements
    ```
 
